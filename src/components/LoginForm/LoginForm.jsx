@@ -51,9 +51,9 @@ export const LoginForm = () => {
 
           <Button
             type="submit"
-            size="large"
+            fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2, ml: 50 }}
+            sx={{ mt: 3, mb: 2}}
           >
             Log in
           </Button>

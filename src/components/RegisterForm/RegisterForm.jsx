@@ -62,9 +62,9 @@ export const RegisterForm = () => {
 
           <Button
             type="submit"
-            size="large"
+            fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2, ml: 50 }}
+            sx={{ mt: 3, mb: 2}}
           >
             Registration
           </Button>
