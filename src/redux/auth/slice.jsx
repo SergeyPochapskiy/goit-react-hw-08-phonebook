@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
-import {Notify} from 'notiflix';
+// import {Notify} from 'notiflix';
 
 
 const initialState = {
@@ -23,12 +23,12 @@ const authSlice = createSlice({
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
-        Notify.success(`Welcome, ${state.user.name}`);
+        // Notify.success(`Welcome, ${state.user.name}`);
         state.isLoggedIn = true;
       })
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false;
-        Notify.failure(`User with this email already exists`);
+        // Notify.failure(`User with this email already exists`);
         state.error = action.payload;
       })
       .addCase(logIn.pending, (state, action) => {
@@ -36,13 +36,13 @@ const authSlice = createSlice({
       })
       .addCase(logIn.rejected, (state, action) => {
         state.isLoading = false;
-        Notify.failure(`Wrong email or password`);
+        // Notify.failure(`Wrong email or password`);
         state.error = action.payload;
       })
       .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
-        Notify.success(`Welcome back, ${state.user.name}`);
+        // Notify.success(`Welcome back, ${state.user.name}`);
         state.isLoggedIn = true;
       })
       .addCase(logOut.pending, (state, action) => {
@@ -53,7 +53,7 @@ const authSlice = createSlice({
         state.error = action.payload;
       })
       .addCase(logOut.fulfilled, state => {
-        Notify.success(`See ya, ${state.user.name}`);
+        // Notify.success(`See ya, ${state.user.name}`);
         state.user = { name: null, email: null };
         state.token = null;
         state.isLoggedIn = false;

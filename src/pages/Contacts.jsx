@@ -26,9 +26,8 @@ export default function App() {
 
   return (
     <Wrap>
-      <Section title={`Phonebook`}></Section>
       <ContactForm />
-      <Section title={`Contacts`}>
+      <Section >
         <Filter />
         {isLoading && !error && <b>Loading...</b>}
         {contacts.length > 0 && <ContactsList contacts={filter} />}
